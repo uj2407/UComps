@@ -1,7 +1,9 @@
 	
 pipeline {
   agent {
-    docker { image 'node:latest' }
+    docker { image 'node:latest',
+        docker build . --pull
+    }
   }
   stages {
     stage('Install') {
