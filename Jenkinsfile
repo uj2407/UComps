@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Started build'
-                ng build
+               // ng build
                 echo 'Building'
             }
         }
         stage('Run'){
             steps{
                 echo 'started run'
-                ng serve
+                npm run
                 echo 'Running'
             }
         }
