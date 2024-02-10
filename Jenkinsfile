@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                ng build
+            }
+        }
+        stage('Run'){
+            steps{
+                ng serve
             }
         }
         stage('Test') {
