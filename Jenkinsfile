@@ -3,6 +3,13 @@ pipeline {
     docker { image 'node:latest' }
   }
   stages {
+    stage('setup'){
+        steps{
+            git config --global user.email "ujmore2407@gmail.com"
+            git config --global user.name "uj2407"
+        }
+        
+    }
     stage('Install') {
       steps { sh 'npm install' 
         echo 'Installation'
