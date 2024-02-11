@@ -1,6 +1,6 @@
 pipeline {
-  agent {
     echo 'Starting docker'
+  agent {
     docker { image 'node:latest' }
   }
   stages {
