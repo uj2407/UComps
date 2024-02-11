@@ -1,28 +1,30 @@
-	
 pipeline {
-  agent {
-    any {
-        
-    }
-  }
-  stages {
-    stage('Install') {
-      steps { sh 'npm install' }
-    }
- 
-    stage('Test') {
-      parallel {
-        stage('Static code analysis') {
-            steps { sh 'npm run-script lint' }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Started build'
+               // ng build
+                echo 'Building'
+            }
         }
-        stage('Unit tests') {
-            steps { sh 'npm run-script test' }
+        stage('Run'){
+            steps{
+                echo 'started run'
+                //npm run
+                echo 'Running'
+            }
         }
-      }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
- 
-    stage('Build') {
-      steps { sh 'npm run-script build' }
-    }
-  }
 }
