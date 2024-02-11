@@ -1,11 +1,11 @@
 pipeline {
-    echo 'Starting docker'
   agent {
     docker { image 'node:latest' }
   }
   stages {
     stage('Install') {
       steps { sh 'npm install' }
+      echo 'Installation done'
     }
  
     stage('Test') {
